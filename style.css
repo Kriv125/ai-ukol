@@ -1,1 +1,623 @@
 
+/* ==================================
+   COSMOS - HLAVNI STYLY
+   ================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #080a14;
+    --bg-soft: #101426;
+    --card: #12172b;
+    --text: #f4f3ff;
+    --muted: #a3abc4;
+    --purple: #a78bfa;
+    --blue: #72b7ff;
+    --border: rgba(255, 255, 255, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+::selection {
+    background: var(--purple);
+    color: var(--bg);
+}
+
+/* NAVIGACE */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 8%;
+    background: rgba(8, 10, 20, 0.90);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo:hover {
+    color: var(--purple);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar nav a {
+    color: var(--muted);
+    font-size: 0.95rem;
+    transition: color 0.25s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--text);
+}
+
+/* HLAVNI STRANKA */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 100px 10%;
+    background:
+        linear-gradient(90deg, rgba(8, 10, 20, 0.96) 0%,
+        rgba(8, 10, 20, 0.72) 48%,
+        rgba(8, 10, 20, 0.15) 100%),
+        url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2000&q=90')
+        center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.eyebrow {
+    color: var(--purple);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.2;
+}
+
+.hero h1,
+.page-hero h1 {
+    font-size: clamp(3rem, 7vw, 5.7rem);
+    letter-spacing: -3px;
+}
+
+.hero h1 span,
+.page-hero h1 span {
+    color: var(--purple);
+}
+
+.hero-text {
+    max-width: 530px;
+    margin: 24px 0 32px;
+    color: #d1d5e8;
+    font-size: 1.08rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 24px;
+    background: var(--purple);
+    color: #111020;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.button:hover {
+    background: #c4b5fd;
+    transform: translateY(-3px);
+}
+
+/* SEKCE A NADPISY */
+
+.section {
+    padding: 100px 8%;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 16px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+}
+
+/* KARTY NA UVODNI STRANCE */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card {
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(167, 139, 250, 0.6);
+}
+
+.card img {
+    height: 230px;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.number {
+    color: var(--blue);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.card h3,
+.planet-card h3 {
+    font-size: 1.4rem;
+    margin: 12px 0;
+}
+
+.card p,
+.planet-card p {
+    color: var(--muted);
+    font-size: 0.94rem;
+}
+
+.text-link {
+    display: inline-block;
+    color: var(--purple);
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.text-link:hover {
+    color: white;
+}
+
+/* CITAT */
+
+.quote-section {
+    padding: 90px 12%;
+    text-align: center;
+    background: linear-gradient(135deg, #11152b, #1c1635);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.quote-section h2 {
+    max-width: 900px;
+    margin: 0 auto 18px;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.quote-author {
+    color: var(--muted);
+}
+
+/* PODSTRANKY */
+
+.page-hero {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 8%;
+    text-align: center;
+    background:
+        linear-gradient(rgba(8, 10, 20, 0.72),
+                        rgba(8, 10, 20, 0.95)),
+        url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1800&q=85')
+        center / cover no-repeat;
+}
+
+.page-hero h1 {
+    margin-bottom: 22px;
+}
+
+.page-hero > p:last-child {
+    max-width: 650px;
+    color: #d1d5e8;
+}
+
+/* PLANETY */
+
+.planet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 22px;
+}
+
+.planet-card {
+    padding: 26px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: transform 0.3s ease;
+}
+
+.planet-card:hover {
+    transform: translateY(-5px);
+}
+
+.planet {
+    width: 105px;
+    height: 105px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    box-shadow: inset -18px -12px 25px rgba(0, 0, 0, 0.45),
+                0 0 30px rgba(114, 183, 255, 0.10);
+}
+
+.mercury {
+    background: radial-gradient(circle at 30% 30%, #d9d2c8, #817b7b 50%, #393b48);
+}
+
+.venus {
+    background: radial-gradient(circle at 30% 25%, #ffe2a5, #c77d45 50%, #5b3029);
+}
+
+.earth {
+    background:
+        radial-gradient(ellipse at 35% 35%, #6dd6aa 0 13%, transparent 14%),
+        radial-gradient(ellipse at 65% 55%, #7fce91 0 17%, transparent 18%),
+        radial-gradient(circle at 35% 30%, #7cc8ff, #2259aa 65%, #14274f);
+}
+
+.mars {
+    background: radial-gradient(circle at 30% 30%, #ffb080, #c65a38 50%, #652d2d);
+}
+
+.jupiter {
+    background: repeating-linear-gradient(
+        0deg, #c18e6c 0 9px, #f0d0a5 10px 17px,
+        #8c5d4d 18px 24px
+    );
+}
+
+.saturn {
+    background: radial-gradient(circle at 30% 30%, #f8e1a5, #bd9b67 55%, #594b45);
+    position: relative;
+}
+
+.saturn::after {
+    content: "";
+    position: absolute;
+    width: 155px;
+    height: 40px;
+    border: 8px solid #d7c7a1;
+    border-left-color: #a58b6c;
+    border-right-color: #a58b6c;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+}
+
+.uranus {
+    background: radial-gradient(circle at 30% 25%, #d3ffff, #78d4e5 55%, #3c788e);
+}
+
+.neptune {
+    background: radial-gradient(circle at 30% 25%, #8dbdff, #315cdb 55%, #18285d);
+}
+
+.fact-banner {
+    margin: 0 8% 90px;
+    padding: 55px;
+    text-align: center;
+    background: linear-gradient(135deg, #171d3a, #281b45);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.fact-banner h2 {
+    max-width: 800px;
+    margin: 0 auto 18px;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.fact-banner > p:last-child {
+    color: var(--muted);
+}
+
+/* GALERIE */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.gallery-item {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+}
+
+.gallery-item img {
+    height: 300px;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.gallery-large {
+    grid-column: span 2;
+}
+
+.gallery-large img {
+    height: 440px;
+}
+
+.gallery-item figcaption {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 22px;
+}
+
+.gallery-item figcaption > span {
+    color: var(--purple);
+    font-weight: 700;
+}
+
+.gallery-item figcaption p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* ZDROJE A CITACE */
+
+.sources-section {
+    padding: 80px 8% 100px;
+    background: var(--bg-soft);
+    border-top: 1px solid var(--border);
+}
+
+.source-card {
+    max-width: 850px;
+    margin: 0 auto 24px;
+    padding: 32px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.source-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.source-card p {
+    margin-bottom: 12px;
+}
+
+.source-list,
+.prompt-list {
+    padding-left: 24px;
+}
+
+.source-list li,
+.prompt-list li {
+    margin-bottom: 18px;
+}
+
+.source-list a {
+    color: var(--purple);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.source-list li p {
+    margin: 5px 0 0;
+    color: var(--muted);
+}
+
+.note {
+    padding: 16px;
+    margin-top: 22px;
+    border-left: 3px solid var(--purple);
+    background: rgba(167, 139, 250, 0.08);
+    color: var(--muted);
+}
+
+/* PATICKA */
+
+.footer {
+    padding: 48px 8% 28px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.footer > p {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.footer > a:not(.logo) {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--purple);
+}
+
+.footer .copyright {
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+}
+
+/* MOBILNI TELEFONY A TABLETY */
+
+@media (max-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .planet-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        padding: 16px 5%;
+        gap: 12px;
+    }
+
+    .navbar nav {
+        gap: 22px;
+    }
+
+    .navbar nav a {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        min-height: 570px;
+        padding: 80px 7%;
+        background-position: 60% center;
+    }
+
+    .hero h1,
+    .page-hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .cards,
+    .planet-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-large {
+        grid-column: auto;
+    }
+
+    .gallery-large img,
+    .gallery-item img {
+        height: 260px;
+    }
+
+    .page-hero {
+        min-height: 360px;
+        padding: 60px 6%;
+    }
+
+    .fact-banner {
+        margin: 0 6% 65px;
+        padding: 32px 22px;
+    }
+
+    .sources-section {
+        padding: 65px 6%;
+    }
+
+    .source-card {
+        padding: 24px 20px;
+    }
+
+    .quote-section {
+        padding: 65px 7%;
+    }
+}
+
+/* OMEZENI ANIMACI PRO UZIVATELE, KTERI JE PREFERUJI VYPNUTE */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
